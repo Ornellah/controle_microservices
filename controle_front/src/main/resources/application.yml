@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    # The name of this application. This is used in Eureka service discovery.
+    name: frontend
+
+keycloak:
+  # URL of keycloak server to connect to.
+  auth-server-url: http://localhost:9081/auth
+  # The realm to use all our applications that must share the same authentication context.
+  realm: controle
+  # The name of the client to use in keycloak.
+  resource: ms_ctrl
+  # Allow this application to connect to keycloak without using any secret.
+  # This should be used in HTTPS only.
+  public-client: true
+  # Change the name of the principal to use the preferred name instead of the keycloak id.
+  principal-attribute: preferred_username
